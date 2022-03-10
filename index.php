@@ -1,11 +1,16 @@
 <?php
+
    $paragrafo = "il mio primo nuovo progetto con php";
 
-   $censura = "***";
+   var_dump($_GET);
+
+   if(isset($_GET['censura'])) {
+
+    $censura = $_GET['censura'];
+    
+   }
 
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -20,10 +25,7 @@
 
     <h4>La mia stringa è lunga: "<?php echo strlen($paragrafo)?>" caratteri.</h4>
 
-    <?php echo str_replace('nuovo', $censura, $paragrafo) ?>
-
-
-
+    <?php echo str_replace($censura, '***', $paragrafo)?>
     
 </head>
 <body>
